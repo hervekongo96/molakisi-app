@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>molakisi</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="col-md-12 m-auto">
+                <div class>
+                    <div class="card-header">
+                        <h4
+                            class="border border-primary py-3 px-3 text-center text-primary">
+                            Enregistrement Professeur
+                        </h4>
+                    </div>
+                    <div class>
+                        <form action="/auth/saving" method="POST">
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" id="nom"
+                                    name="name" placeholder="Nom" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" id="nom"
+                                    name="name" placeholder="Nom" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse Email</label>
+                                <input type="email" class="form-control"
+                                    id="email" name="gmail" placeholder="E-mail" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwod">Mot de passe</label>
+                                <input type="password" class="form-control"
+                                    id="password" name="password"
+                                    placeholder="Mot de passe" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordconfirm">Confirmez Mot de
+                                    passe</label>
+                                <input type="password" class="form-control"
+                                    id="passwordconfirm" name="passwordconfirm"
+                                    placeholder="Confirmez mot de passe" autocomplete="off">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Créez</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                {{#if message}}
+                <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                {{/if}}
+            </div>
+        </div>
+    </body>
+</html>

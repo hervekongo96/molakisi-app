@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>molakisi</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="col-md-12 m-auto">
+                <div class="col-md-12">
+                    <div class>
+                        <div class="card-header">
+                            <h4
+                                class="border border-primary py-3 px-3 text-center text-primary">
+                                Se connecter
+                            </h4>
+                        </div>
+                        <div class>
+                            <form action="/auth/login_p" method="POST">
+                                <div class="form-group">
+                                    <label for="email">Adresse Email</label>
+                                    <input placeholder="Adresse Email"
+                                        type="email" class="form-control"
+                                        id="email" name="gmail" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwod">Mot de Passe</label>
+                                    <input placeholder="Mot de Passe"
+                                        type="password" class="form-control"
+                                        id="password" name="password" autocomplete="off">
+                                </div>
+                                <button type="submit" class="btn btn-primary">se
+                                    connecter</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                {{#if message}}
+                <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                {{/if}}
+            </div>
+        </div>
+    </body>
+</html>
