@@ -17,36 +17,17 @@ const public = path.join(__dirname, './public');
 app.use(express.static(public));
 
 //parse url-encode bodies(as sent by HTML forms)
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(bodyparser.json());  
+app.use(bodyparser.json());
 
-// The route
+// The routes  
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
-const connection = (db)=>{
-    console.log(db)
-}
-
-// db connector
-// const db = mysql.createConnection({  
-//     host: process.env.DATABASE_HOST,
-//     user: process.env.DATABASE_USER,
-//     key: process.env.DATABASE_PASSWORD,
-//     database: process.env.DATABASE
-// })
-
-// db.connect((error)=>{
-//     if(error){
-//         console.log(error)
-//     }else{
-//         console.log("connexion établie avec succès!!!")
-//     }
-// })
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, ()=>{
-    console.log(`serveur allumer au port ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`server start on port ${PORT}`);
 })

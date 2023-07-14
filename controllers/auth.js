@@ -1,14 +1,14 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const tokens = require('./token')
 
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    key: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
-});
+// const db = mysql.createConnection({
+//     host: process.env.DATABASE_HOST,
+//     user: process.env.DATABASE_USER,
+//     key: process.env.DATABASE_PASSWORD,
+//     database: process.env.DATABASE
+// });
 
 
 //open user compte
