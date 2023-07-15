@@ -43,7 +43,7 @@ exports.registerTuteur = (req, res) => {
                 console.log(error)
             } else {
                 console.log(results)
-                return res.render('message', {
+                return res.render('register', {
                     message: 'Compte Succès'
                 });
             }

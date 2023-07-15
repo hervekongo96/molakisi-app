@@ -9,12 +9,16 @@ router.get('/auth/devenir_tutors/tutors_postuler', (req, res)=>{
     res.render('./devenir_tutors/tutors_postuler');
 });
 
-//End tutors informations
+//End tutors informations 
 
 // index home
 router.get('/home/index', (req, res)=>{
     res.render('./home/index');
 });
+
+router.get('/trouver_tutors/index', (req, res)=>{
+    res.render('./trouver_tutors/index')
+})
 
 
 router.get('/register', (req, res)=>{
@@ -22,7 +26,7 @@ router.get('/register', (req, res)=>{
 });
 
 router.get('/register_p', (req, res)=>{
-    res.render('register_p');
+    res.render('register_p'); 
 }); 
 
 router.get('/tutors_postuler', (req, res)=>{
