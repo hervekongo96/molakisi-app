@@ -4,10 +4,11 @@ const router = express.Router();
 
 
 router.post('/register', authController.register);
-router.post('/register_p', authController.register);
+router.post('/registerTuteur', authController.registerTuteur);
 router.post('/login', authController.login);
-router.post('/login_p', authController.login_p);
+router.post('/loginTuteur', authController.loginTuteur);
 router.post('/saving', authController.saving);
+router.post('/submits', authController.submits);
 
 
 

@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-
+// route for tutor
 router.get('/index', (req, res)=>{
-    res.render('index');
+    res.render('./devenir_tutors/index');
 });
+router.get('/auth/devenir_tutors/tutors_postuler', (req, res)=>{
+    res.render('./devenir_tutors/tutors_postuler');
+});
+
+
 
 router.get('/register', (req, res)=>{
     res.render('register');
