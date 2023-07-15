@@ -25,16 +25,8 @@ router.get('/register_p', (req, res)=>{
     res.render('register_p');
 }); 
 
-router.get('/login', (req, res)=>{
-    res.render('login');
-});
-
-router.get('/login_p', (req, res) =>{
-    res.render('login_p')
-})
-
-router.get('/save/auth/', (req, res) =>{
-    res.render('saving')
+router.get('/tutors_postuler', (req, res)=>{
+    res.render('./devenir_tutors/tutors_postuler')
 })
 
 
