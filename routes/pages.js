@@ -9,6 +9,12 @@ router.get('/auth/devenir_tutors/tutors_postuler', (req, res)=>{
     res.render('./devenir_tutors/tutors_postuler');
 });
 
+//End tutors informations
+
+// index home
+router.get('/home/index', (req, res)=>{
+    res.render('./home/index');
+});
 
 
 router.get('/register', (req, res)=>{

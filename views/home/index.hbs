@@ -195,7 +195,7 @@
         <!-- Le modal pour le login -->
         <section>
             <div id="id01" class="modal">
-                <form class="modal-content" id="modal__login" action="/action_page.php">
+                <form class="modal-content" id="modal__login" action="/auth/loginUser" method="POST">
                     <div class="container__modal">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Fermer le modal"><i class="bi bi-x-circle"></i></span>
                         <h2>Se connecter à Molakisi</h2>
@@ -204,7 +204,7 @@
                         <!-- <label for="email"><b>Email</b></label> -->
                         <div class="input__modal">
                             <input type="text" placeholder="Email" name="email" autocomplete="off" required>
-                            <input type="password" placeholder="Mot de passe" name="psw" autocomplete="off" required>
+                            <input type="password" placeholder="Mot de passe" name="password" autocomplete="off" required>
                         </div>
                 
                         <!-- <label for="psw"><b>Mot de passe</b></label> -->
@@ -233,7 +233,7 @@
                         
                     </div>
                 </form>
-                <form class="modal-content" id="modal__inscrip" action="/action_page.php">
+                <form class="modal-content" id="modal__inscrip" action="/auth/registerUser" method="POST">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Fermer le modal"><i class="bi bi-x-circle"></i></span>
                     <div class="container__modal">
                         <h2>Bienvenue à Molakisi</h2>
@@ -242,11 +242,11 @@
                         <div class="input__modal">
                             <div class="modal__flex">
                                 <input type="text" placeholder="Nom" name="name" autocomplete="off" required>
-                                <input type="text" placeholder="Prenom" name="psw" autocomplete="off" required>
+                                <input type="text" placeholder="Prenom" name="prenom" autocomplete="off" required>
                             </div>
                             <input type="text" placeholder="Email" name="email" autocomplete="off" required>
-                            <input type="password" placeholder="Password" name="pass" autocomplete="off" required>
-                            <input type="password" placeholder="Retaper Password" name="pass" autocomplete="off" required>
+                            <input type="password" placeholder="Password" name="password" autocomplete="off" required>
+                            <input type="password" placeholder="Retaper Password" name="passwordconfirm" autocomplete="off" required>
                            
                         </div>
                 

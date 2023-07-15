@@ -17,41 +17,6 @@ const db = mysql.createConnection({
     database: process.env.DATABASE_NAME
 });
 
-
-//open user compte
-exports.register = (req, res) => {
-
-    let { name, gmail, password, passwordconfirm } = req.body;
-
-    db.query('SELECT gmail FROM user WHERE gmail = ?', [gmail], async (error, results) => {
-        if (error) {
-            console.log(error);
-        }
-        if (results.length > 0) {
-            return res.render('register', {
-                message: 'le compte existe'
-            });
-        } else if (password !== passwordconfirm) {
-            return res.render('register', {
-                message: 'mot de passe incorrect'
-            });
-        }
-        let hashedPassword = await bcrypt.hash(password, 8);
-        console.log(hashedPassword);
-        db.query('INSERT INTO user SET ?', { name: name, gmail: gmail, password: hashedPassword }, (error, results) => {
-            if (error) {
-                console.log(error)
-            } else {
-                console.log(results)
-                return res.render('register', {
-                    message: 'Compte Succès'
-                });
-            }
-        });
-    });
-
-};
-
 //open tutor compte
 exports.registerTuteur = (req, res) => {
     console.log(req.body);
@@ -212,31 +177,70 @@ exports.submits = (req, res)=>{
 
 //End tutor informations
 
-//connexion user
-exports.login = async (req, res) => {
-    try {
-        const { gmail, password } = req.body;
+//------------------------------------------------------------------------------------------
 
-        if (!gmail || !password) {
-            return res.status(400).render('login', {
+//connexion user
+
+//open user compte
+exports.registerUser = (req, res) => {
+    console.log(req.body);
+
+    var { name, prenom, email, password, passwordconfirm } = req.body;
+
+    db.query('SELECT email FROM user WHERE email = ?', [email], async (error, results) => {
+        if (error) {
+            console.log(error);
+        }
+        if (results.length > 0) {
+            return res.render('message', {
+                message: 'The compte exist'
+            });
+        } else if (password !== passwordconfirm) {
+            return res.render('mrssage', {
+                message: 'mot de passe incorrect'
+            });
+        }
+        let hashedPassword = await bcrypt.hash(password, 8);
+        console.log(hashedPassword);
+        db.query('INSERT INTO user SET ?', { name: name, prenom:prenom, email: email, password: hashedPassword }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(results)
+                return res.render('message', {
+                    message: 'Compte Succès'
+                });
+            }
+        });
+    });
+
+};
+
+//login user
+exports.loginUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).render('message', {
                 message: 'remplir les deux champs SVP!'
             });
         }
-        db.query('SELECT * FROM user WHERE gmail=?', [gmail], async (_, results) => {
+        db.query('SELECT * FROM user WHERE email=?', [email], async (_, results) => {
 
             console.log(results);
 
             if ((!results) || (!(await bcrypt.compare(password, results[0].password)))) {
-                res.status(401).render('login', {
-                    message: 'Gmail ou mot de Passe incorect'
+                res.status(401).render('message', {
+                    message: 'error email or password'
                 });
             }
             else {
                 const tokens = (tokens) =>{
-                    return tokens 
+                    return tokens
                 }
                 tokens();
-                res.status(200).redirect("/register");
+                res.status(200).redirect('./devenir_tutors/tutors_postuler');
             }
         });
 
@@ -245,54 +249,3 @@ exports.login = async (req, res) => {
     }
 
 };
-
-
-
-
-//save the professor
-exports.saving = async (req, res) => {
-    
-}
-
-//submit the information for eleve
-
-exports.soumettre = (req, res)=>{
-    console.log(req.body); 
-
-    const {
-        nom, 
-        postnom, 
-        prenom, 
-        sexe, 
-        dataNaissance, 
-        classe, 
-        subjets, 
-        adresse, 
-        objectif, 
-        tuteur, 
-        emailParent,
-        phone
-    } = req.body;
-
-    db.query('SELECT phone FROM eleve WHERE phone = ?', [phone], async (error, results)=>{
-        if(error){
-            console.log(error)
-        }
-        if(results.length > 0){
-            return res.render('message', {
-                message : 'ce compte existe'
-            })
-        }
-    db.query('INSERT INTO phone SET ?', {nom:nom, postnom:postnom, prenom:prenom, sexe:sexe, universite:universite, faculte:faculte, departement:departement, telephone:telephone, debut:debut, }, (error, results)=>{
-        if(error){
-            console.log(error)
-        }else{
-            console.log(results)
-            return res.render('message',{
-                message: 'vous etes enregistrer'
-            })
-        }
-    })
-    })
-
-}
