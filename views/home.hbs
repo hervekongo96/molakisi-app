@@ -26,7 +26,7 @@
         <div class="header__large">
             <!--logo du header-->
             <div class="header__logo">
-                <a href="./home.hbs"><img src="../images/logo_black.png" alt=""></a>
+                <a href="/home"><img src="../images/logo_black.png" alt=""></a>
             </div>
             <nav>
                 <ul>
@@ -196,46 +196,25 @@
 
             </div>
         </section>
-
-        <!-- container temoignage --
-        <section class="container__partner">
-            <div class="partner__text">
-                <h2>Lorem ipsum </h2>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Quisquam nisi amet voluptas ut sint quod saepe, non dolorum
-                    sed ea accusantium quas pariatur
-                    voluptates exercitationem id rem earum veniam tenetur!
-                </p>
-            </div>
-            <div class="partner__logo">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-                <img src="../../public/images/logo_partner.jpg" alt="">
-
-            </div>
-        </section>-->
         
         
         <!-- Le modal pour le login -->
         <section>
             <div id="id01" class="modal">
-                <form class="modal-content" id="modal__login" action="/action_page.php">
+                <form class="modal-content" id="modal__login" action="/auth/loginUser" method="POST">
                     <div class="container__modal">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close"
                             title="Fermer le modal"><i class="bi bi-x-circle"></i></span>
                         <h2>Se connecter </h2>
                         <p>Complètez pour accèder à votre compte.</p>
+                        {{#if message}}
+                            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                        {{/if}}
                         <hr>
                         <!-- <label for="email"><b>Email</b></label> -->
                         <div class="input__modal">
                             <input type="text" placeholder="Email" name="email" autocomplete="off" required>
-                            <input type="password" placeholder="Mot de passe" name="psw" autocomplete="off" required>
+                            <input type="password" placeholder="Mot de passe" name="password" autocomplete="off" required>
                         </div>
                         <!--div class="checkbox mb-3">
                             <label>
@@ -267,22 +246,31 @@
                 </form>
 
                 <!-- formulaire d'inscription_user -->
-                <form class="modal-content" id="modal__inscript" action="#">
+                <form class="modal-content" id="modal__inscript" action="/auth/registerUser" method="POST">
                     <div class="container__modal">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close"
                             title="Fermer le modal"><i class="bi bi-x-circle"></i></span>
                         <h2>Inscription </h2>
                         <p>Complètez pour vous inscrire.</p>
+                        {{#if message}}
+                             <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                        {{/if}}
                         <hr>
                         <!-- <label for="email"><b>Email</b></label> -->
                         <div class="input__modal">
-                            <input type="text" placeholder="Email" name="email" autocomplete="off" required>
+                            <input type="text" placeholder="name" name="name" autocomplete="off" required>
+                        </div>
+                        <div class="input__modal">
+                            <input type="text" placeholder="prenom" name="prenom" autocomplete="off" required>
+                        </div>
+                        <div class="input__modal">
+                            <input type="email" placeholder="Email" name="email" autocomplete="off" required>
                         </div>
                         <div class="input__modal">
                             <input type="password" placeholder="Password" name="password" autocomplete="off" required>
                         </div>
                         <div class="input__modal">
-                            <input type="password" placeholder="Retaper votre Password" name="email" autocomplete="off" required>
+                            <input type="password" placeholder="Retaper votre Password" name="passwordconfirm" autocomplete="off" required>
                         </div>
                         <div class="clearfix btn__connexion">
                             <button type="submit" class="connexion">S'inscrire </button>

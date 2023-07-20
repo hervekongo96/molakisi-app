@@ -207,7 +207,7 @@ exports.registerUser = (req, res) => {
                 console.log(error)
             } else {
                 console.log(results)
-                return res.render('message', {
+                return res.render('home', {
                     message: 'Compte Succès'
                 });
             }
@@ -240,7 +240,7 @@ exports.loginUser = async (req, res) => {
                     return tokens
                 }
                 tokens();
-                res.status(200).redirect('./devenir_tutors/tutors_postuler');
+                res.status(200).redirect('/profil');
             }
         });
 
