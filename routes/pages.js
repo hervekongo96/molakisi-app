@@ -12,30 +12,27 @@ router.get('/auth/devenir_tutors/tutors_postuler', (req, res)=>{
 //End tutors informations 
 
 // index home
-router.get('/home/index', (req, res)=>{
-    res.render('./home/index');
+router.get('/molakisi', (req, res)=>{
+    res.render('index');
 });
 
-router.get('/trouver_tutors/index', (req, res)=>{
-    res.render('./trouver_tutors/index')
+router.get('/home', (req, res)=>{
+    res.render('home')
 })
-
-
-router.get('/register', (req, res)=>{
-    res.render('register');
-});
-
-router.get('/register_p', (req, res)=>{
-    res.render('register_p'); 
-}); 
+ 
+router.get('/tutors_devenir', (req, res)=>{
+    res.render('tutors_devenir')
+})
+ 
+router.get('/trouver_tutors', (req, res)=>{
+    res.render('trouver_tutors')
+})   
 
 router.get('/tutors_postuler', (req, res)=>{
-    res.render('./devenir_tutors/tutors_postuler')
-})
+    res.render('tutors_postuler')
+})   
 
 
-
-
-
+  
 module.exports = router;
 

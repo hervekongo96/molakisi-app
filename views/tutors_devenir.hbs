@@ -7,17 +7,18 @@
     <title>Molakisi - Devenir un Tuteur</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="style/images/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="public/images/logo.png" type="image/x-icon">
     <!--Google icons-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--Bootstrap icon-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="../../style/css/style.css">
-    <link rel="stylesheet" href="../../style/css/tutor.css">
-    <link rel="stylesheet" href="../../style/css/other_style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+    <link rel="stylesheet" href="../css/other_style.css">
+    <link rel="stylesheet" href="../css/responsive_style.css">
 </head>
 
 <body>
@@ -25,132 +26,91 @@
         <div class="header__large">
             <!--logo du header-->
             <div class="header__logo">
-                <a href="../home/"><img src="../../style/images/logo_black.png" alt=""></a>
+                <a href="./home.hbs"><img src="../images/logo_black.png" alt=""></a>
             </div>
             <nav>
                 <ul>
+                    <li><a href="/home">Accueil</a></li>
+                    <li><a href="/tutors_devenir">Devenir un répétiteur</a></li>
+                    <li><a href="/trouver_tutors">Trouver un répétiteur</a></li>
                     <li><a href="#" class="header__btn"
                             onclick="document.getElementById('id01').style.display='block'"><i
                                 class=" bi bi-box-arrow-in-right"></i> Login</a></li>
+
                 </ul>
             </nav>
         </div>
+
     </header>
+
+    <div class="header__respo">
+        <div class="logo_and_burger">
+            <!--logo du header-->
+            <div class="logo">
+                <a href="./home.html"><img src="../../public/images/logo_black.png" alt=""></a>
+            </div>
+            <!--icon burger-->
+            <div class="burger" >
+                <a href="#"  id="affiche__menu"  onclick="toggleBloc()" >
+                        <i class="bi bi-menu-button-wide-fill" ></i>
+                </a>
+            </div>
+        </div>
+        
+        <nav class="menu__burger"  id="mon-bloc">
+            <ul>
+                <li><a href="./home.html">Accueil</a></li>
+                <li><a href="./tutors_devenir.html">Devenez un répétiteur</a></li>
+                <li><a href="./trouver_tutors.html">Trouver un répétiteur</a></li>
+         
+                <li><a href="#" class="header__btn"
+                        onclick="document.getElementById('id01').style.display='block'"><i
+                            class=" bi bi-box-arrow-in-right"></i> Login</a></li>
+
+            </ul>
+        </nav>
+        
+    </div>
+
     <main>
         <section class="container__tutor">
             <div class="tutor__text">
-                <h2>Devenez tuteur et gagnez de l'argent en enseignant ce que vous aimez</h2>
-                <p>
-                    Avec Tuteria, vous pouvez enseigner aux étudiants en ligne ou
-                    dans votre région et adapter les cours à votre emploi du temps.
-                    Acceptez simplement des emplois,
-                    donnez de bonnes leçons et soyez payé. C'est si facile.
+                <h3> <span class="bi bi-arrows-fullscreen"></span>    Boostez votre revenu !</h3>
+                <h2> Devenez un enseignant entrepreneur avec Molakisi Services. </h2>
+                <p> Rejoindre Molakisi services, 
+                    c’est rejoindre une grande communauté de professionnels 
+                    de l’éducation de qualité. Nos répétiteurs sont les
+                     piliers de notre communauté. En transmettant leur passion au quotidien, 
+                     ils offrent plus qu’un cours particulier, ce sont de coaches scolaire qui forment et prépare les leaders du futur.
                 </p>
-                <a href="./tutors_postuler.html" class="tutor__btn" title="postulez pour devenir tuteur">Postulez
+
+
+                <a href="/tutors_postuler" class="tutor__btn" title="postulez pour devenir tuteur">Postulez
                     maintenant</a>
             </div>
             <div class="tutor__image">
-                <img src="../../style/images/bg_tutor.jpg" alt="">
+                <img src="../images/bg_tutor.jpg" alt="">
             </div>
         </section>
 
-        <!-- la liste de tous les tutors qui sont dans molakisi -->
-        <section class="container__liste">
-            <div class="liste__title">
-                <h2>Enseignez n’importe quoi, n’importe quand, n’importe où</h2>
-                <p>Des études à la préparation aux tests, en passant par les langues et la musique, nous avons des
-                    étudiants à la recherche de tuteurs dans diverses matières.</p>
-            </div>
-            <div class="liste__profil">
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais </p>
-                    </div>
-                </div>
-
-                <div class="bloc__profil">
-                    <img src="../../style/images/img__tutor.jpg" alt="">
-                    <div class="img__text ">
-                        <h4>Chinasa</h4>
-                        <p>Tuteur de Francais et anglais</p>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-        </section>
-        <!-- la liste de tous les tutors qui sont dans molakisi -->
 
         <section class="tutor__stat">
             <div class="stat__title">
-                <h2>Rejoignez la plus grande communauté de tuteurs professionnels.</h2>
-                <p>Tuteria rend le tutorat prestigieux et financièrement gratifiant</p>
+                <h2>Une communauté des répétiteurs qui jouent aussi le rôle de coaches scolaire auprès de chaque enfant en difficultés d'apprentissage</h2>
+                <p>Molakisi rend le tutorat prestigieux et financièrement gratifiant</p>
             </div>
             <div class="stat__number">
                 <div class="first__color">
-                    <h4>₦516M</h4>
+                    <h4>$ 5000 USD</h4>
                     <p>Gains réalisés par les tuteurs</p>
                 </div>
                 <div class="second__color">
-                    <h4>358K+</h4>
+                    <h4>504+</h4>
                     <p>Heures de cours enseignées</p>
                 </div>
                 <div class="green__color">
-                    <h4>23,235</h4>
-                    <p>Total students impacted</p>
+                    <h4>1,000</h4>
+                    <p>Total étudiants impactés</p>
                 </div>
             </div>
         </section>
@@ -161,10 +121,10 @@
         <section class="tutor__student">
             <div class="student__title">
                 <div>
-                    <h2>Accédez à un flux constant d'étudiants </h2>
+                    <h2>Accédez à un flux constant d'apprenants </h2>
                 </div>
-                <div>
-                    <button class="tutor__btn" href="./tutors_postuler.html">Postulez maintenant</button>
+                <div class="tutor__btn_bloc">
+                    <a class="tutor__btn" href="/tutors_postuler">Postulez maintenant !</a>
                 </div>
             </div>
             <div class="student__detail">
@@ -206,21 +166,17 @@
         <!-- Le modal pour le login -->
         <section>
             <div id="id01" class="modal">
-                <form class="modal-content" id="modal__login" action="/auth/loginTuteur" method="POST">
+                <form class="modal-content" id="modal__login" action="/action_page.php">
                     <div class="container__modal">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close"
                             title="Fermer le modal"><i class="bi bi-x-circle"></i></span>
-                            {{#if message}}
-                            <h4 class="alert alert-danger mt-4">{{message}}</h4>
-                            {{/if}}
                         <h2>Connexion Tuteur</h2>
                         <!-- <p>Complètez pour accèder à votre compte.</p> -->
                         <hr>
                         <!-- <label for="email"><b>Email</b></label> -->
                         <div class="input__modal">
                             <input type="text" placeholder="Email" name="email" autocomplete="off" required>
-                            <input type="password" placeholder="Mot de passe" name="password" autocomplete="off"
-                                required>
+                            <input type="password" placeholder="Mot de passe" name="psw" autocomplete="off" required>
                         </div>
 
                         <!-- <label for="psw"><b>Mot de passe</b></label> -->
@@ -251,12 +207,9 @@
 
                     </div>
                 </form>
-                <form class="modal-content" id="modal__inscrip" action="/auth/registerTuteur" method="POST">
+                <form class="modal-content" id="modal__inscrip" action="/action_page.php">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close"
                         title="Fermer le modal"><i class="bi bi-x-circle"></i></span>
-                    {{#if message}}
-                    <h4 class="alert alert-danger mt-4">{{message}}</h4>
-                    {{/if}}
                     <div class="container__modal">
                         <h2>Bienvenue à Molakisi</h2>
                         <p>Réjoins Molakisi avec des tuteurs de qualités et qualifiés.</p>
@@ -264,12 +217,12 @@
                         <div class="input__modal">
                             <div class="modal__flex">
                                 <input type="text" placeholder="Nom" name="name" autocomplete="off" required>
-                                <input type="text" placeholder="Prenom" name="prenom" autocomplete="off" required>
+                                <input type="text" placeholder="Prenom" name="psw" autocomplete="off" required>
                             </div>
                             <input type="text" placeholder="Email" name="email" autocomplete="off" required>
-                            <input type="password" placeholder="Password" name="password" autocomplete="off" required>
-                            <input type="password" placeholder="Retaper Password" name="passwordconfirm"
-                                autocomplete="off" required>
+                            <input type="password" placeholder="Password" name="pass" autocomplete="off" required>
+                            <input type="password" placeholder="Retaper Password" name="pass" autocomplete="off"
+                                required>
 
                         </div>
 
@@ -299,32 +252,53 @@
 
     </main>
 
-    <script>
-        // le js du modal
-        var modal = document.getElementById('id01');
-        var modal__inscrip = document.getElementById('modal__inscrip');
-        var modal__login = document.getElementById('modal__login');
-        var show__inscrip = document.getElementById('show__inscrip');
-        var show__login = document.getElementById('show__login');
+        <!-- footer molakisi -->
+        <footer class="container__footer">
+            <div class="footer__logo">
+                <a href="index.html"><img src="../../public/images/logo_white.png" alt=""></a>
+            </div>
+            <div class="footer__text">
+                <h3>A Propos</h3>
+                <p>
+                    Molakisi Services vous connecte avec les répétiteurs expérimentés et qualifiés proche de chez vous. C’est un service spécialisé dans dans le cours à domicile et dans l'accompagnement scolaire des élèves. 
+                </p>
+            </div>
+            <div class="footer__text">
+                <h3>Nos Adresses</h3>
+                <p>
+                    Av. Sergent Moke n°10.651 C/Kintambo Cfr/Rond point SOCIMAT/ Dans l’enceinte de BOUKIN. 
+                </p>
+            </div>
+            <div class="footer__text">
+                <h3>Souscrire à notre newsletter </h3>
+                <p>
+                    Recevez des informations sur les techniques d’accompagnement scolaire et les offres de Molakisi Service. 
+                </p>
+                <div class="newsletters">
+                    <input type="text" placeholder="Votre mail..." oninput="this.className = ''" class="newsletters__btn"> <br>
+                    <button type="submit" class="newsletters__btn">Souscrire</button>
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        //modal__inscrip doit etre off par defaut
-        modal__inscrip.style.display = "none";
-        //lorsqu'on clique sur btn modal2, on cache le modal 1 et on affiche le 2
-        show__inscrip.onclick = function (event) {
-            modal__login.style.display = "none";
-            modal__inscrip.style.display = "block";
-        }
-        show__login.onclick = function (event) {
-            modal__inscrip.style.display = "none";
-            modal__login.style.display = "block";
-        }
-    </script>
+                </div>
+                <ul>
+                    <li><a href=" https://api.whatsapp.com/send/?phone=243893404985&text&type=phone_number&app_absent=0 "><i class="bi bi-whatsapp"></i></a></li>
+                    <li><a href="https://web.facebook.com/molakisiservices/?_rdc=1&_rdr "><i class="bi bi-facebook"></i></a></li>
+                    <li><a href=""><i class="bi bi-twitter"></i></a></li>
+                    <li><a href=""><i class="bi bi-pinterest"></i></a></li>
+                </ul>
+            </div>
+
+        </footer>
+        <!-- footer molakisi -->
+
+
+
+    <div class="copyright">
+        <p>Copyright @Molakisi2023</p>
+    </div>
+
+    <!-- pour afficher le modal -->
+    <script src="../../public/js/modal.js"></script>
+   
 </body>
 
 </html>
