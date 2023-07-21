@@ -35,6 +35,10 @@ router.get('/tutors_postuler', (req, res)=>{
 router.get('/profil', (req, res)=>{
     res.render('profil_user')
 })
+
+router.get('/submits', (req, res)=>{
+    res.render('tutors_postuler')
+})
   
 module.exports = router;
 

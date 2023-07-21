@@ -71,14 +71,14 @@
          <!-- bloc pour l'inscription -->
          <section>
             <div class="container__inscription">
-                <form class="modal-content form__postuler" action="/action_page.php">
+                <form class="modal-content form__postuler" action="/auth/submits" method="POST" enctype="multipart/form-data">
                     <div class="container__modal">
                         <h2>Postulez pour Devenir Tuteur</h2>
                         <!-- <p>Réjoins nous Molakisi avec des tuteurs de qualités et qualifiés.</p> -->
                         <hr>
                         <div class="input__modal">
                             <div class="modal__flex">
-                                <input type="text" placeholder="Nom" name="name" autocomplete="off" required>
+                                <input type="text" placeholder="Nom" name="nom" autocomplete="off" required>
                                 <input type="text" placeholder="Postnom" name="postnom" autocomplete="off" required>
                             </div>
                             <div class="modal__flex">
@@ -90,15 +90,19 @@
                                 <input type="date" placeholder="Date de naissance" name="dateNais" autocomplete="off" required>
                             </div> -->
                             <div class="modal__flex">
-                                <input type="mail" placeholder="Adresse mail" name="lieuNais" autocomplete="off" required>
-                                <input type="tel" placeholder="Téléphone" name="telephone" autocomplete="off" required>
+                                <input type="text" placeholder="Adresse mail" name="email" autocomplete="off" required>
+                                <input type="text" placeholder="Téléphone" name="phone" autocomplete="off" required>
                             </div>
                             <div class="modal__flex">
-                                <input type="tel" placeholder="Montant Mensuel" name="montant" autocomplete="off" required>
+                                <input type="text" placeholder="Montant Mensuel" name="montant" autocomplete="off" required>
                             </div>
                             <div class="">
-                                <label for="psw"><b>Votre CV</b></label> <br>
-                                <input type="file" placeholder="Votre CV" name="votreCV" autocomplete="off" required>
+                                <label for="text"><b>Votre CV</b></label> <br>
+                                <input type="file" placeholder="Votre CV" name="file" autocomplete="off" required>
+                            </div>
+                            <div class="">
+                                <label for="text"><b>Photo Profil</b></label> <br>
+                                <input type="file" placeholder="Choisir photo" name="photo" autocomplete="off" required>
                             </div>
 
                             <input type="text" placeholder="Année d'expérience" name="anneExp" autocomplete="off" required>
@@ -109,14 +113,14 @@
                 
                         <!-- <label for="psw"><b>Mot de passe</b></label> -->
                         <div class="clearfix btn__connexion">
-                            <button type="submit" class="connexion" onclick="document.getElementById('id01').style.display='block'">Postulez</button>
+                            <button type="submit" class="connexion" onclick="document.getElementById('id01').style.display='block'" value="Upload">Postulez</button>
                         </div>
                 
                         
                         <hr>
                         <div class="modal__bottom__form">
                             <!-- <p>Déjà membre ?, <a href="../home/" class="modal__bottom__a">Se connecter</a> </p> -->
-                            <a href="./home.html" class="modal__bottom__a"> Retour</a>
+                            <a href="/home" class="modal__bottom__a"> Retour</a>
                         </div>
 
                 
@@ -195,7 +199,7 @@
         <p>Copyright @Molakisi2023</p>
     </div>
    
-    <script src="../../public/js/modal.js"></script>
+    <script src="../js/modal.js"></script>
 
 </body>
 </html>
