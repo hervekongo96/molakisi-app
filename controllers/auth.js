@@ -102,23 +102,20 @@ exports.submits = (req, res) => {
 
     if (req.files) {
         console.log(req.files)
-        let file = req.files.file
-        let photo = req.filles.photos
+        var file = req.files.file
+        var photo = req.files.photo
         var filename = file.name
         var photoname = photo.name
-        
-        console.log(filename)
-        console.log(photoname)
 
         file.mv('./uploads/cv/' + filename, function (err) {
             if (err) {
                 res.send(err)
-            } 
+            }
         })
         photo.mv('./uploads/profil/' + filename, function (err) {
             if (err) {
                 res.send(err)
-            } 
+            }
         })
     }
     else {
@@ -127,70 +124,24 @@ exports.submits = (req, res) => {
 
 
     var file = filename
+    var photo = photoname
 
-    console.log(req.body)
-    console.log(file)
-
-    db.query('INSERT INTO candidature SET ?', { nom: nom, postnom: postnom, prenom: prenom, sexe: sexe, email: email, phone: phone, montant: montant, file: file, anneExp: anneExp, cours: cours, ecole: ecole }, (error, results) => {
+    db.query('SELECT email FROM candidature WHERE email = ?', [email], async (error, results) => {
         if (error) {
             console.log(error)
-        } else {
-            console.log(results)
-            return res.render('message', {
-                message: 'vous etes enregistrer'
-            })
         }
+        if (results.length > 0) {
+            return res.send("c'est compte existe")
+        }
+        db.query('INSERT INTO candidature SET ?', { nom: nom, postnom: postnom, prenom: prenom, sexe: sexe, email: email, phone: phone, montant: montant, file: file, anneExp: anneExp, cours: cours, ecole: ecole, photo: photo }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(results)
+                return res.send('vous etes enregistrer')
+            }
+        })
     })
-
-    // db.query('SELECT email FROM candidature WHERE email = ?', [email], async (error, results) => {
-    //     if (error) {
-    //         console.log(error)
-    //     }
-    //     if (results.length > 0) {
-    //         return res.render('message', {
-    //             message: 'ce compte existe'
-    //         })
-    //     }
-    //     db.query('INSERT INTO candidature SET ?', { nom: nom, postnom: postnom, prenom: prenom, sexe: sexe, email: email, phone: phone, montant: montant, file: file, anneExp: anneExp, cours: cours, ecole: ecole }, (error, results) => {
-    //         if (error) {
-    //             console.log(error)
-    //         } else {
-    //             console.log(results)
-    //             return res.render('message', {
-    //                 message: 'vous etes enregistrer'
-    //             })
-    //         }
-    //     })
-    // })
-
-    // try {
-    //     if(!req.files) {
-    //         res.send({
-    //             status: false,
-    //             message: 'No file uploaded'
-    //         });
-    //     } else {
-    //         //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
-    //         let file= req.files.file;
-    //         console.log(file)
-    //         //Use the mv() method to place the file in the upload directory (i.e. "uploads")
-    //         file.mv('./uploads/' + file.name);
-
-    //         //send response
-    //         res.send({
-    //             status: true,
-    //             message: 'File is uploaded',
-    //             data: {
-    //                 name: file.name,
-    //                 mimetype: file.mimetype,
-    //                 size: file.size
-    //             }
-    //         });
-
-    //     }
-    // } catch (err) {
-    //     res.status(500).send(err);
-    // }
 
 }
 
