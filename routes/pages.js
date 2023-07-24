@@ -41,8 +41,18 @@ router.get('/submits', (req, res)=>{
 })
 
 
+
 router.get('/trouver_tudors', (req, res)=>{
     res.render('trouver_tutors')
 })
+
+router.get('/trouver_tutors/inscription_user', (req, res)=>{
+    res.render('inscription_user')
+})
+
+router.get('/payement', (req, res)=>{
+    res.render('http://www.flexpay.cd/pay/RU5DTEFTU0U=')
+})
+
 module.exports = router;
 

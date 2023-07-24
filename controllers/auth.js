@@ -186,6 +186,31 @@ exports.registerUser = (req, res) => {
 
 };
 
+//register eleve
+
+exports.register_eleve = (req, res) => {
+    console.log(req.body);
+
+    var { nom, prenom, postnom, sexe, naissance, classe, sujet, objectif, adresse, tuters, email, phoneP} = req.body;
+
+    db.query('SELECT email FROM registereleve WHERE email = ?', [email], async (error, results) => {
+        if (error) {
+            console.log(error)
+        }
+        if (results.length > 0) {
+            return res.send("c'est compte existe")
+        }
+        db.query('INSERT INTO registereleve SET ?', { nom: nom, prenom: prenom, postnom: postnom, sexe: sexe, naissance: naissance, classe: classe, sujet: sujet, objectif: objectif, adresse: adresse, tuters: tuters, email: email, phoneP: phoneP }, (error, results) => {
+            if (error) {
+                console.log(error)
+            } else {
+                return res.redirect('http://www.flexpay.cd/pay/RU5DTEFTU0U=')
+            }
+        })
+    })
+
+}; 
+
 //login user
 exports.loginUser = async (req, res) => {
     try {
